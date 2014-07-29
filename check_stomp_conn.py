@@ -40,7 +40,7 @@ if __name__ == '__main__':
     # parse out command args to override connection settings
     parser = argparse.ArgumentParser(description='A Nagios plugin to monitor stomp message servers')
     parser.add_argument('-H', '--host')
-    parser.add_argument('-p', '--port', type=int)
+    parser.add_argument('-P', '--port', type=int)
     parser.add_argument('-u', '--user')
     parser.add_argument('-p', '--password')
     parser.add_argument('-t', '--topic')
