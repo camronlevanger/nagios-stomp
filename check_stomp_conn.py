@@ -15,6 +15,7 @@ exit_message = 'UNKNOWN - Unable to get info for stomp connections'
 
 
 class MyListener(object):
+
 	def on_connecting(self, host_and_port):
 		print host_and_port
 		global exit_code
