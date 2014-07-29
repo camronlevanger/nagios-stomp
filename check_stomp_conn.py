@@ -8,7 +8,7 @@ import stomp
 
 exit_code = 3
 exit_message = 'UNKNOWN - Unable to get info for stomp connections'
-debug = false
+debug = False
 
 
 class MyListener(object):
@@ -57,7 +57,7 @@ if __name__ == '__main__':
     # if args were passed in use them rather than defaults
     if args.debug != None:
         global debug
-        debug = true
+        debug = True
         dprint('debug output enabled')
     if args.host != None:
         sthost = args.host
