@@ -62,11 +62,12 @@ To pass args to the command make sure you set in nrpe.cfg
 
 And then the args are
 
-	-H host_uri
-	-P port_number
-	-u username
-	-p password
-	-t topic_name
+	-H --host hostname of the stomp server
+	-P --port port number stomp is listening on
+	-u --user username user credentials
+	-p --password password credentials
+	-t --topic topic to subscribe to
+	-w --wait how long to wait for the script to make a connection
 
 ###Add nagios-stomp to Nagios Checks on Your Nagios Monitoring Server
 Define a new service for nagios-stomp
