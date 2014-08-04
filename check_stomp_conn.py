@@ -57,7 +57,7 @@ if __name__ == '__main__':
 
     # connection defaults
     sthost = 'localhost'
-    stport = 61613
+    stport = 61611
     stuser = 'admin'
     stpass = 'admin'
     stopic = 'default_topic'
