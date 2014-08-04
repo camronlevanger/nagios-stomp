@@ -51,6 +51,7 @@ if __name__ == '__main__':
     parser.add_argument('-u', '--user')
     parser.add_argument('-p', '--password')
     parser.add_argument('-t', '--topic')
+    parser.add_argument('-w', '--wait', type=int)
     parser.add_argument('--debug', action="store_true")
     args = parser.parse_args()
 
@@ -60,6 +61,7 @@ if __name__ == '__main__':
     stuser = 'admin'
     stpass = 'admin'
     stopic = 'default_topic'
+    stwait = 0.1
 
     # if args were passed in use them rather than defaults
     if args.debug:
@@ -76,6 +78,10 @@ if __name__ == '__main__':
     if args.port != None:
         stport = args.port
         dprint(('using port: ' + str(stport)))
+
+    if args.wait != None:
+        stwait = args.wait
+        dprint(('using wait: ' + str(stwait)))
 
     if args.user != None:
         stuser = args.user
@@ -99,7 +105,7 @@ if __name__ == '__main__':
         conn.subscribe(destination='/topic/' + stopic, id=1, ack='auto')
 
         # give it a moment to make the connection and then disconnect
-        time.sleep(0.1)
+        time.sleep(stwait)
         conn.disconnect()
     except KeyboardInterrupt:
         print "Shutdown requested...exiting"
