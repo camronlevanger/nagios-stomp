@@ -75,7 +75,7 @@ if __name__ == '__main__':
 
     if args.port != None:
         stport = args.port
-        dprint(('using port: ' + stport))
+        dprint(('using port: ' + str(stport)))
 
     if args.user != None:
         stuser = args.user
@@ -99,7 +99,7 @@ if __name__ == '__main__':
         conn.subscribe(destination='/topic/' + stopic, id=1, ack='auto')
 
         # give it a moment to make the connection and then disconnect
-        time.sleep(5)
+        time.sleep(0.1)
         conn.disconnect()
     except KeyboardInterrupt:
         print "Shutdown requested...exiting"
